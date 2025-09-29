@@ -1,0 +1,19 @@
+</!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<title>Exercício 5</title>
+</head>
+<body>
+	<h1>Exercício 5</h1>
+	<p>Modificando a cor da página.</p>
+	<button type="click" id="botao">Clique para modificar</button>
+	<script>
+		const botao = document.getElementById('botao');
+		botao.addEventListener('click', (event) => {
+		const cor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      		document.body.style.backgroundColor = cor;
+		});
+	</script>
+</body>
+</html>

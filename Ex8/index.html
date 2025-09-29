@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<title>Exercício 8</title>
+</head>
+<body>
+	<h1>Exercício 8</h1>
+	<p>Clique no botão abaixo para receber os números da Mega-Sena.</p>
+	<button type="click" id="botao">Clique aqui</button>
+	<p id="resultado"></p>
+	<script>
+		const botao = document.getElementById('botao');
+		function gerarMegaSena() {
+      			let numeros = new Set();
+      			while (numeros.size < 6) {
+       				let n = Math.floor(Math.random() * 60) + 1;        			
+				numeros.add(n);
+      			}
+		      	let resultado = Array.from(numeros).sort((a, b) => a - b);
+     		 	document.getElementById("resultado").textContent = resultado.join(" - ");
+    		}
+
+    		document.getElementById("botao").addEventListener("click", gerarMegaSena);	
+	</script>
+</body>
+</html>

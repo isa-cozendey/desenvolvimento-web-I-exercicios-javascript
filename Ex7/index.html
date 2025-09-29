@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<title>Exercício 7</title>
+	<style>
+		.destacar {
+			color: white;
+			background-color: darkblue;
+			padding: 10px;
+		}
+	</style>
+
+</head>
+<body>
+	<h1 id="titulo">Exercício 7</h1>
+	<p>Clique no botão para destacar o título acima</p>
+	<button type="click" id="botao">Clique aqui</button>
+	<script>
+		const botao = document.getElementById('botao');
+		const titulo = document.getElementById('titulo');
+		botao.addEventListener('click', (event) => {
+			titulo.classList.toggle('destacar');
+		});
+	</script>
+</body>
+</html>
+

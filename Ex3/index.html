@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercício 3</title>
+</head>
+<body>
+  <h1>Exercício 3</h1>
+  <form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required />
+    <button type="button" id="botao">Enviar</button>
+  </form>
+
+  <ul id="lista"></ul>
+
+  <script>
+    const botao = document.getElementById('botao');
+    const lista = document.getElementById('lista');
+
+    botao.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+
+      if (nome.trim() === "") return;
+
+      const novoItem = document.createElement('li');
+      novoItem.textContent = nome;
+      lista.appendChild(novoItem);
+
+      document.getElementById('nome').value = "";
+    });
+  </script>
+</body>
+</html>
+

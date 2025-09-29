@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercício 9</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+    		}
+    		input, textarea, button {
+      			display: block;
+      			margin: 5px 0;
+      			padding: 5px;
+    		}
+    		.erro {
+      			color: red;
+    		}
+  	</style>
+</head>
+<body>
+	<h1>Exercício 9</h1>
+ 	<h2>Formulário de Contato</h2>
+	<form id="contatoForm">
+		<input type="text" id="nome" placeholder="Nome">
+		<input type="email" id="email" placeholder="Email">
+		<input type="text" id="telefone" placeholder="Telefone">
+		<textarea id="mensagem" placeholder="Mensagem"></textarea>
+		<button type="submit">Enviar</button>
+		<p class="erro" id="erroMsg"></p>
+	</form>
+	<script>
+		document.getElementById("contatoForm").addEventListener("submit", function(e) {
+			e.preventDefault();
+			let nome = document.getElementById("nome").value.trim();
+			let email = document.getElementById("email").value.trim();
+			let telefone = document.getElementById("telefone").value.trim();
+			let mensagem = document.getElementById("mensagem").value.trim();
+			let erro = document.getElementById("erroMsg");
+
+      			if (!nome || !email || !telefone || !mensagem) {
+        			erro.textContent = "É necessário preencher todos os campos!";
+      			} else {
+        			erro.textContent = "";
+        			alert("Formulário enviado!");
+        			this.reset();
+      			}
+    		});
+  </script>
+</body>
+</html>
+
